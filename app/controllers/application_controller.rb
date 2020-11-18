@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  patch '/recipes/:id' do  #updates a recipe
+  patch '/recipes/:id' do
     params.delete("_method")
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.update(params)
